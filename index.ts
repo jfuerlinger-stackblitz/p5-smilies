@@ -30,7 +30,7 @@ function preload() {
 function setup() {
   // Diese Funktion wird einmal beim Programmstart aufgerufen.
   // https://p5js.org/reference/#/p5/setup
-  p.createCanvas(700, 500);
+  p.createCanvas(window.innerWidth,window.innerHeight);
 }
 
 function keyPressed() {
