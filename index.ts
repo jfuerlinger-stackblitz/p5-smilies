@@ -48,6 +48,28 @@ function mousePressed() {
 function draw() {
   p.background('white');
 
-  // Beispiel für Aufruf einer Hilfsfunktion in einer anderen Datei.
-  drawCircle({ x: 100, y: 100 });
+  for(let x=0; x< p.width; x+=100) {
+    for(let y=0; y< p.width; y+=100) {
+      smilie(x, y);    
+    }  
+  }
+}
+
+function smilie(x: number, y: number) {
+  p.push();
+  p.translate(x, y);
+
+  p.stroke('black');
+  p.fill('yellow');
+  p.strokeWeight(5);
+  p.circle(50, 50, 100);
+
+  p.fill('black');
+  p.circle(70, 35, 10);
+  p.circle(30, 35, 10);
+
+  p.noFill();
+  p.arc(50, 50, 50, 50, 0.5, Math.PI - 0.5, p.OPEN);
+
+  p.pop();
 }
